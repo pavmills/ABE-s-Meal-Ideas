@@ -1,0 +1,213 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: Heebo, sans-serif;
+}
+h1.headline {
+    font-size: 60px;
+    font-weight: normal;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    margin-top: 80px;
+}
+.container {
+    width: 100%;
+}
+
+/* NAV */
+.navbar {
+    background: black;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+.navbar-brand {
+    color: white !important;
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+}
+
+
+/* SEARCH */
+.search-form {
+    width: 50%;
+    float: right;
+}
+.search-button {
+    background-color: white;
+    border: 2px solid black;
+    float: right;
+    color: black;
+}
+.search-input {
+    width: 70%;
+    float: right;
+    border: 2px solid black;
+}
+
+/* HEADLINE */
+
+.headline-left {
+    background: url('../images/cinnamon-roll.jpg');
+    /* linear-gradient(
+        rgba(11, 29, 51, 0.65),
+        rgba(11, 29, 51, 0.65)
+      ),
+      url('../images/cinnamon-roll.jpg'); */
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+}
+.headline-right {
+    background: url('../images/spinach.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+}
+.section-title {
+    font-family: Heebo, sans-serif;
+    color: #755000;
+    font-weight: 900;
+    font-size: 60px;
+    text-align: left;
+    line-height: 1.1em;
+    width: 60%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* CONENT */
+.home-container {
+    padding-top: 56px;
+}
+.page-container {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+/* HOMEPAGE */
+
+.circle-image {
+    background: url('../images/table.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+h6.category-title {
+    position: inherit;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* SIDE BAR */
+.col-md-2 {
+    padding: 0;
+}
+ .side-bar {
+     height: 100%;
+     width: 20%;
+     float: left;
+     position: fixed;
+     overflow: scroll;
+ }
+ .side-bar ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+ .side-bar ul li {
+     border-top: 0.5px solid lightgray;
+     padding: 10px 0 10px 0;
+     font-size: 15px;
+ }
+ .side-bar ul li:nth-child(1){
+     border: 0px;
+     padding-top: 0px;
+
+ }
+ .side-bar ul li i {
+     float: right;
+     color: black;
+ }
+ .side-bar h3 {
+     border-top: 5px solid black;
+     padding: 20px 0 15px 0;
+     font-weight: 900;
+     font-size: 20px;
+     margin-top: 20px;
+ }
+ .side-bar h3:nth-child(1) {
+     margin-top: 0px;
+ }
+ .side-bar p {
+     font-size: 12px;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-weight: bold;
+ }
+
+ /* RECIPIE */
+
+ .recipe {
+     display: table;
+     overflow: scroll;
+     height: 100%;
+     width: 100%;
+ }
+ .recipe-item {
+     border: 1px solid lightgray;
+     margin: 0 auto;
+     padding: 0;
+ }
+ .recipe-image {
+     background: url('../images/table.jpg');
+     background-position: center;
+     background-size: cover;
+     height: 200px;
+     position: relative;
+ }
+ .recipe-image i {
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     padding: 12px 9px 9px 9px;
+     color:black;
+     background:white;
+     height: 40px;
+     width: 40px;
+     border-radius: 50px;
+     margin: 10px;
+ }
+ .recipe-name {
+    padding: 10px 0 0 10px;
+    font-weight: 900;
+    font-size: 20px;
+ }
+ .recipe-rating {
+    padding: 5px 0 0 10px;
+    font-size: 15px;
+ }
+ .recipe-description {
+    padding: 5px 0 10px 10px;
+    font-size: 15px;
+ }
+
+
+ 
+ @media screen and (max-width:767px) {
+    .side-bar {
+        height: 100%;
+        width: 100%;
+        float: none;
+    }
+
+ }
