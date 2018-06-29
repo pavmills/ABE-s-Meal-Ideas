@@ -14,7 +14,7 @@ function displayRecipe() {
 
         for (var i = 0; i < 10; i++) {
 
-            // Recipe Image
+            // Call Recipe Image
             var recipeDiv = $(`<div id='${i}' class='recipe-item'>`);
             var imgURL = response.hits[i].recipe.image;
             var recipeImage = $('<img>').attr({
@@ -24,11 +24,31 @@ function displayRecipe() {
             })
             recipeDiv.append(recipeImage);
 
-            // Recipe Name
-            var recipeName = $('<p>').html(response.hits[i].recipe.label);
+            // Shorten Recipe Name
+            text_truncate = function(str, length, ending) {
+                if (length == null) {
+                  length = 100;
+                }
+                if (ending == null) {
+                  ending = '...';
+                }
+                if (str.length > length) {
+                  return str.substring(0, length - ending.length) + ending;
+                } else {
+                  return str;
+                }
+              };
+
+            recipeNameTrim = text_truncate(response.hits[i].recipe.label, 18);
+            text_truncate(recipeNameTrim);
+            console.log(recipeNameTrim);
+
+            // Call Recipe Name
+            var recipeName = $('<p id="recipe-name">').html(recipeNameTrim);
             recipeDiv.append(recipeName);
 
-            
+
+
          
             $('.recipe-rating').html(`Calories: ${response.hits[i].recipe.calories}`);
 
@@ -43,3 +63,7 @@ function displayRecipe() {
 }
 
 $(document).on("click", displayRecipe);
+
+
+
+
