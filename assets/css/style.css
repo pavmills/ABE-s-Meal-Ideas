@@ -16,16 +16,15 @@ h1.headline {
 
 /* NAV */
 .navbar {
-    background: black;
+    background: white;
     width: 100%;
     position: fixed;
     z-index: 999;
 }
-.navbar-brand {
-    color: white !important;
-    font-family: 'Itim', cursive;
+/* .navbar-brand {
+    color: black !important;
     font-size: 20px;
-}
+} */
 
 
 /* SEARCH */
@@ -186,13 +185,12 @@ h6.category-title {
      width: 100%;
  }
  #recipe {
-     
+     width: 100%;
  }
 
- #recipe div {
+ #recipe .recipe-item {
      float: left;
      display: table;
-     width: 33.3%;
  }
  .recipe-item {
      border: 1px solid lightgray;

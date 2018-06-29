@@ -13,6 +13,7 @@ function displayRecipe() {
         resultsArray = response.hits;
 
         for (var i = 0; i < 10; i++) {
+
             // Recipe Image
             var recipeDiv = $(`<div id='${i}' class='recipe-item'>`);
             var imgURL = response.hits[i].recipe.image;
@@ -24,8 +25,7 @@ function displayRecipe() {
             recipeDiv.append(recipeImage);
 
             // Recipe Name
-            var name = response.hits[i].recipe.label;
-            var recipeName = $('<p>').html(name);
+            var recipeName = $('<p>').html(response.hits[i].recipe.label);
             recipeDiv.append(recipeName);
 
             
