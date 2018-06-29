@@ -20,11 +20,8 @@ h1.headline {
     width: 100%;
     position: fixed;
     z-index: 999;
+    border-bottom: 2px solid black;
 }
-/* .navbar-brand {
-    color: black !important;
-    font-size: 20px;
-} */
 
 
 /* SEARCH */
@@ -59,28 +56,6 @@ h1.headline {
 }
 .headline-right {
     background: url('../images/spinach.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 400px;
-}
-.home-cinnamon {
-    background: url('../images/cinnamon-roll.jpg');
-    /* linear-gradient(
-        rgba(11, 29, 51, 0.65),
-        rgba(11, 29, 51, 0.65)
-      ),
-      url('../images/cinnamon-roll.jpg'); */
-    background-position: center;
-    background-size: cover;
-    height: 400px;
-}
-.home-cinnamon-text {
-    background:brown;
-    /* linear-gradient(
-        rgba(11, 29, 51, 0.65),
-        rgba(11, 29, 51, 0.65)
-      ),
-      url('../images/cinnamon-roll.jpg'); */
     background-position: center;
     background-size: cover;
     height: 400px;
