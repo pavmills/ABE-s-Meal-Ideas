@@ -3,6 +3,9 @@ var queryURL = 'https://api.edamam.com/search?q=chicken&app_id=66ec94ca&app_key=
 var resultsArray = []
 
 function displayRecipe() {
+
+    $("#recipe").empty();
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -19,9 +22,9 @@ function displayRecipe() {
 
             // Call Recipe Image
             var imgURL = response.hits[i].recipe.image;
-            var recipeImage = $(`<img class='popup'>`).attr({
+            var recipeImage = $(`<img class='popup' onclick='displayPopup(${i})'>`).attr({
                 src: imgURL,
-                id: 'recipe'+i,
+                id: 'recipe',
             })
             recipeDiv.append(recipeImage);
 
@@ -56,50 +59,26 @@ function displayRecipe() {
 displayRecipe();
 
 
-function displayPopup() {
-   
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
+function displayPopup(index) {
 
-    .then(function(response) {
+    $("#popup").empty();
 
-        // Create div container
         var ingredientDiv = $(`<div class='recipe-content'>`);
 
-        // Call image
-        var imgURL = response.hits[1].recipe.image;
-        var recipeImage = $('<img>').attr({
+        var imgURL = resultsArray[index].recipe.image;
+        var recipeImage = $(`<img>`).attr({
             src: imgURL,
             id: 'recipe',
         })
         ingredientDiv.append(recipeImage);
-
-        // Shorten Recipe Name
-        text_truncate = function(str, length, ending) {
-            if (length == null) {
-                length = 100;
-            }
-            if (ending == null) {
-                ending = '...';
-            }
-            if (str.length > length) {
-                return str.substring(0, length - ending.length) + ending;
-            } else {
-                return str;
-            }
-        };
-        
-        recipeNameTrim = text_truncate(response.hits[1].recipe.label, 25);
-        console.log(recipeNameTrim);
         
         // Call Recipe Name
+        recipeNameTrim = text_truncate(resultsArray[index].recipe.label, 25);
         var recipeName = $('<p class="recipe-name">').html(recipeNameTrim);
         ingredientDiv.append(recipeName);
 
         // Call ingredients
-        var ingredientList = $('<p class="ingredient-list">').html(response.hits[1].recipe.ingredientLines[1]);
+        var ingredientList = $('<p class="ingredient-list">').html(resultsArray[index].recipe.ingredientLines[1]);
         ingredientDiv.append(ingredientList);
 
         // Place content inside container
@@ -108,8 +87,7 @@ function displayPopup() {
         var options = { content : $('#popup') };
         $('.popup').popup(options);
 
-    });
+        popup.close('.popup_close');
 
 };
 
-displayPopup();
