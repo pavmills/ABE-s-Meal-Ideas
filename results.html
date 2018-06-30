@@ -10,9 +10,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <!-- STYLE -->
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- STYLE -->
+    <link href="assets/css/popup.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
@@ -43,6 +46,12 @@
           </form>
         </div>
     </nav>
+
+    <!-- POPUP -->
+    <section class="popup-container">
+        <div id="popup"></div>
+    </section>
+
     <!-- PAGE CONTENT -->
     <div class="row page-container">
         <!-- SIDE BAR -->
@@ -51,7 +60,7 @@
                 <!-- <p>Search by</p> -->
                 <h3>Ingredient.</h3>
                 <ul>
-                    <li><a>Chicken </a><i class="fas fa-utensils"></i></li>
+                    <li>Chicken<i class="fas fa-utensils"></i></li>
                     <li>Beef <i class="fas fa-utensils"></i></li>
                     <li>Noodles <i class="fas fa-utensils"></i></li>
                 </ul>
@@ -67,12 +76,9 @@
         <!-- END SIDE BAR -->
         <!-- RECEPIES -->
         <div class="col-12 col-md-9">
-            <section class="recipe-container">
-                <div class="row">
-                    <div id="recipe"></div>
-               
-                </div>
-            </section>
+            <div class="row">
+                <div id="recipe"></div>
+            </div>
         </div>
         <!-- END RECIPE  -->
     </div>
@@ -80,5 +86,7 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/popup.js"></script>
+
 </body>
 </html>

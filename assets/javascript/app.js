@@ -12,15 +12,16 @@ function displayRecipe() {
         //
         resultsArray = response.hits;
 
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 9; i++) {
+
+            // Create div container
+            var recipeDiv = $(`<div id='${i}' class='recipe-item'>`);
 
             // Call Recipe Image
-            var recipeDiv = $(`<div id='${i}' class='recipe-item'>`);
             var imgURL = response.hits[i].recipe.image;
-            var recipeImage = $('<img>').attr({
+            var recipeImage = $(`<img class='popup'>`).attr({
                 src: imgURL,
-                height: '200px',
-                id: "recipe"+i,
+                id: 'recipe'+i,
             })
             recipeDiv.append(recipeImage);
 
@@ -39,22 +40,12 @@ function displayRecipe() {
                 }
               };
 
-            recipeNameTrim = text_truncate(response.hits[i].recipe.label, 18);
-            text_truncate(recipeNameTrim);
+            recipeNameTrim = text_truncate(response.hits[i].recipe.label, 25);
             console.log(recipeNameTrim);
 
             // Call Recipe Name
-            var recipeName = $('<p id="recipe-name">').html(recipeNameTrim);
+            var recipeName = $('<p class="recipe-name">').html(recipeNameTrim);
             recipeDiv.append(recipeName);
-
-
-
-         
-            $('.recipe-rating').html(`Calories: ${response.hits[i].recipe.calories}`);
-
-            // Log the data in the console as well
-        
-            console.log(response.hits[i].recipe.image);
 
             $("#recipe").append(recipeDiv);
 
@@ -62,8 +53,63 @@ function displayRecipe() {
     })
 }
 
-$(document).on("click", displayRecipe);
+displayRecipe();
 
 
+function displayPopup() {
+   
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
 
+    .then(function(response) {
 
+        // Create div container
+        var ingredientDiv = $(`<div class='recipe-content'>`);
+
+        // Call image
+        var imgURL = response.hits[1].recipe.image;
+        var recipeImage = $('<img>').attr({
+            src: imgURL,
+            id: 'recipe',
+        })
+        ingredientDiv.append(recipeImage);
+
+        // Shorten Recipe Name
+        text_truncate = function(str, length, ending) {
+            if (length == null) {
+                length = 100;
+            }
+            if (ending == null) {
+                ending = '...';
+            }
+            if (str.length > length) {
+                return str.substring(0, length - ending.length) + ending;
+            } else {
+                return str;
+            }
+        };
+        
+        recipeNameTrim = text_truncate(response.hits[1].recipe.label, 25);
+        console.log(recipeNameTrim);
+        
+        // Call Recipe Name
+        var recipeName = $('<p class="recipe-name">').html(recipeNameTrim);
+        ingredientDiv.append(recipeName);
+
+        // Call ingredients
+        var ingredientList = $('<p class="ingredient-list">').html(response.hits[1].recipe.ingredientLines[1]);
+        ingredientDiv.append(ingredientList);
+
+        // Place content inside container
+        $("#popup").append(ingredientDiv);
+
+        var options = { content : $('#popup') };
+        $('.popup').popup(options);
+
+    });
+
+};
+
+displayPopup();
