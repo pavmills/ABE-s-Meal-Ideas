@@ -19,11 +19,12 @@ function displayRecipe() {
 
             // Call Recipe Image
             var imgURL = response.hits[i].recipe.image;
-            var recipeImage = $(`<img class='popup'>`).attr({
-                src: imgURL,
+            var recipeImage = $(`<div class='popup recipe-image' onclick='displayPopup(${i})' style="background: url('${imgURL}'); background-position: center; background-repeat: no-repeat; background-size: cover;"'><i class="fas fa-star"></i></div>`).attr({
                 id: 'recipe'+i,
             })
             recipeDiv.append(recipeImage);
+
+            // recipeDiv.append(`<i class="fas fa-star"></i>`);
 
             // Shorten Recipe Name
             text_truncate = function(str, length, ending) {
@@ -56,50 +57,52 @@ function displayRecipe() {
 displayRecipe();
 
 
-function displayPopup() {
-   
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
+function displayPopup(index) {
 
-    .then(function(response) {
+    // $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    // })
+    //
+    // .then(function(response) {
+    //
+    //     // Create div container
+    //     var ingredientDiv = $(`<div class='recipe-content'>`);
+    //
+    //     // Call image
+    //     var imgURL = response.hits[1].recipe.image;
+    //     var recipeImage = $('<img>').attr({
+    //         src: imgURL,
+    //         id: 'recipe',
+    //     })
+    //     ingredientDiv.append(recipeImage);
+    //
+    //     // Shorten Recipe Name
+    //     text_truncate = function(str, length, ending) {
+    //         if (length == null) {
+    //             length = 100;
+    //         }
+    //         if (ending == null) {
+    //             ending = '...';
+    //         }
+    //         if (str.length > length) {
+    //             return str.substring(0, length - ending.length) + ending;
+    //         } else {
+    //             return str;
+    //         }
+    //     };
 
-        // Create div container
         var ingredientDiv = $(`<div class='recipe-content'>`);
 
-        // Call image
-        var imgURL = response.hits[1].recipe.image;
-        var recipeImage = $('<img>').attr({
-            src: imgURL,
-            id: 'recipe',
-        })
-        ingredientDiv.append(recipeImage);
-
-        // Shorten Recipe Name
-        text_truncate = function(str, length, ending) {
-            if (length == null) {
-                length = 100;
-            }
-            if (ending == null) {
-                ending = '...';
-            }
-            if (str.length > length) {
-                return str.substring(0, length - ending.length) + ending;
-            } else {
-                return str;
-            }
-        };
-        
-        recipeNameTrim = text_truncate(response.hits[1].recipe.label, 25);
+        recipeNameTrim = text_truncate(resultsArray[index].recipe.label, 25);
         console.log(recipeNameTrim);
-        
+
         // Call Recipe Name
         var recipeName = $('<p class="recipe-name">').html(recipeNameTrim);
         ingredientDiv.append(recipeName);
 
         // Call ingredients
-        var ingredientList = $('<p class="ingredient-list">').html(response.hits[1].recipe.ingredientLines[1]);
+        var ingredientList = $('<p class="ingredient-list">').html(resultsArray[index].recipe.ingredientLines[1]);
         ingredientDiv.append(ingredientList);
 
         // Place content inside container
@@ -108,8 +111,8 @@ function displayPopup() {
         var options = { content : $('#popup') };
         $('.popup').popup(options);
 
-    });
+    // });
 
 };
 
-displayPopup();
+// displayPopup();

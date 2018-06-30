@@ -126,7 +126,7 @@ h6.category-title {
      width: 20%;
      float: left;
      position: fixed;
-     overflow: scroll;
+     overflow: auto;
  }
  .side-bar ul {
      margin: 0;
@@ -175,6 +175,7 @@ h6.category-title {
      border: 1px solid lightgray;
      margin: 5px;
      padding: 0;
+    width: 300px;
  }
  .recipe-item:nth-child(1) {
     margin: 0px 5px 5px 5px;
@@ -185,6 +186,9 @@ h6.category-title {
  .recipe-item:nth-child(3) {
     margin: 0px 5px 5px 5px;
  }
+.recipe-item:nth-child(4) {
+    margin: 0px 5px 5px 5px;
+}
  .recipe-image {
      background-repeat: no-repeat;
      background-position: center;
@@ -192,8 +196,8 @@ h6.category-title {
      height: 200px;
      position: relative;
  }
- .recipe-image i {
-     position: absolute;
+ .recipe-item i {
+     position: relative;
      bottom: 0;
      right: 0;
      padding: 12px 9px 9px 9px;
@@ -204,6 +208,15 @@ h6.category-title {
      border-radius: 50px;
      margin: 10px;
  }
+
+.recipe-item i:hover {
+    color: #d5c50b;
+}
+
+i.faved {
+    color: #d5c50b;
+}
+
  .recipe-name {
     padding: 10px 0 0 10px;
     font-weight: 900;
