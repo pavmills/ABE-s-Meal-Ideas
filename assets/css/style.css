@@ -213,11 +213,7 @@ h6.category-title {
      border: 1px solid lightgray;
      margin: 5px;
      padding: 0;
-<<<<<<< HEAD
     width: 32%;
-=======
-    width: 300px;
->>>>>>> development-eric
  }
  .recipe-item:nth-child(1) {
     margin: 0px 5px 5px 5px;
@@ -252,19 +248,11 @@ h6.category-title {
  }
 
 .recipe-item i:hover {
-<<<<<<< HEAD
-    color: #ecd908;
-}
-
-i.faved {
-    color: #ecd908;
-=======
     color: #d5c50b;
 }
 
 i.faved {
     color: #d5c50b;
->>>>>>> development-eric
 }
 
  .recipe-name {
