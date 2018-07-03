@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Meal Planner</title>
+    <title>Meal Planner - Local Grocers</title>
+
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
@@ -19,21 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
 
-    <!--firebase-->
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-    <script src="assets/javascript/config.js"></script>
-    <script src="assets/javascript/auth.js"></script>
-    <script src="assets/javascript/login.js"></script>
-
-    <!--vex-->
-    <script src="assets/javascript/vex.js"></script>
-    <link rel="stylesheet" href="assets/css/vex.css">
-    <link rel="stylesheet" href="assets/css/vex-theme-wireframe.css">
-
     <!-- STYLE -->
-    <link href="assets/css/popup.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
@@ -67,46 +54,13 @@
     </div>
 </nav>
 
-<!-- POPUP -->
-<section class="popup-container">
-    <div id="popup"><div id="firebaseui-auth-container"></div></div>
-</section>
 
-<!-- PAGE CONTENT -->
-<div class="row page-container">
-    <!-- SIDE BAR -->
-    <div class="col-12 col-md-3">
-        <section class="side-bar">
-            <!-- <p>Search by</p> -->
-            <h3>Ingredient.</h3>
-            <ul>
-                <li>Chicken<i class="fas fa-utensils"></i></li>
-                <li>Beef <i class="fas fa-utensils"></i></li>
-                <li>Noodles <i class="fas fa-utensils"></i></li>
-            </ul>
-            <h3>Category.</h3>
-            <ul>
-                <li>Favorites <i class="far fa-star"></i></li>
-                <li>Healthy <i class="far fa-heart"></i></li>
-                <li>Quick &amp; Easy <i class="far fa-clock"></i></li>
-                <li>Vegetarian <i class="fa fa-leaf"></i></li>
-            </ul>
-        </section>
-    </div>
-    <!-- END SIDE BAR -->
-    <!-- RECEPIES -->
-    <div class="col-12 col-md-9">
-        <div class="row">
-            <div id="recipe"></div>
-        </div>
-    </div>
     <div id="map"></div>
-    <!-- END RECIPE  -->
-</div>
-<!-- END PAGE CONTENT -->
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="assets/javascript/app.js"></script>
+<script src="assets/javascript/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkUxsueErz026aKa4OgcZg_1X8xDxCbCs&callback=initMap" asyncdefer></script>
 
 </body>
 </html>
