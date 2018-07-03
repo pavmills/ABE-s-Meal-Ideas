@@ -3,9 +3,6 @@ var queryURL = 'https://api.edamam.com/search?q=chicken&app_id=66ec94ca&app_key=
 var resultsArray = []
 
 function displayRecipe() {
-
-    $("#recipe").empty();
-
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -22,11 +19,12 @@ function displayRecipe() {
 
             // Call Recipe Image
             var imgURL = response.hits[i].recipe.image;
-            var recipeImage = $(`<img class='popup' onclick='displayPopup(${i})'>`).attr({
-                src: imgURL,
-                id: 'recipe',
+            var recipeImage = $(`<div class='popup recipe-image' onclick='displayPopup(${i})' style="background: url('${imgURL}'); background-position: center; background-repeat: no-repeat; background-size: cover;"'><i class="fas fa-star"></i></div>`).attr({
+                id: 'recipe'+i,
             })
             recipeDiv.append(recipeImage);
+
+            // recipeDiv.append(`<i class="fas fa-star"></i>`);
 
             // Shorten Recipe Name
             text_truncate = function(str, length, ending) {
@@ -61,19 +59,45 @@ displayRecipe();
 
 function displayPopup(index) {
 
-    $("#popup").empty();
+    // $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    // })
+    //
+    // .then(function(response) {
+    //
+    //     // Create div container
+    //     var ingredientDiv = $(`<div class='recipe-content'>`);
+    //
+    //     // Call image
+    //     var imgURL = response.hits[1].recipe.image;
+    //     var recipeImage = $('<img>').attr({
+    //         src: imgURL,
+    //         id: 'recipe',
+    //     })
+    //     ingredientDiv.append(recipeImage);
+    //
+    //     // Shorten Recipe Name
+    //     text_truncate = function(str, length, ending) {
+    //         if (length == null) {
+    //             length = 100;
+    //         }
+    //         if (ending == null) {
+    //             ending = '...';
+    //         }
+    //         if (str.length > length) {
+    //             return str.substring(0, length - ending.length) + ending;
+    //         } else {
+    //             return str;
+    //         }
+    //     };
 
         var ingredientDiv = $(`<div class='recipe-content'>`);
 
-        var imgURL = resultsArray[index].recipe.image;
-        var recipeImage = $(`<img>`).attr({
-            src: imgURL,
-            id: 'recipe',
-        })
-        ingredientDiv.append(recipeImage);
-        
-        // Call Recipe Name
         recipeNameTrim = text_truncate(resultsArray[index].recipe.label, 25);
+        console.log(recipeNameTrim);
+
+        // Call Recipe Name
         var recipeName = $('<p class="recipe-name">').html(recipeNameTrim);
         ingredientDiv.append(recipeName);
 
@@ -87,7 +111,8 @@ function displayPopup(index) {
         var options = { content : $('#popup') };
         $('.popup').popup(options);
 
-        popup.close('.popup_close');
+    // });
 
 };
 
+// displayPopup();
