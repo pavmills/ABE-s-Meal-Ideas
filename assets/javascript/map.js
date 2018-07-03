@@ -3,9 +3,9 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map;
-// let infoWindow;
+let infoWindow;
+
 function initMap() {
-    let infoWindow;
     map = new google.maps.Map(document.getElementById("map"), {
         // center: { lat: -34.397, lng: 150.644 },
         center: { lat: 38.8991099, lng: -94.7258638 },
