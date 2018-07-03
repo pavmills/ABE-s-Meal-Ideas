@@ -55,7 +55,7 @@ function initMap() {
                 let myLatLng = { lat: myLat, lng: myLong };
                 var marker = new google.maps.Marker({
                   position: myLatLng,
-                  icon: "assets/images/Phyllis1.png",
+                  icon: "assets/images/Grocery.png",
                   animation: google.maps.Animation.DROP,
                   map: map
                 });
