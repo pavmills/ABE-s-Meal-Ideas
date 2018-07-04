@@ -23,7 +23,7 @@ function displayResuts(array) {
 
     for (let i = 0; i < array.length; i++) {
 
-        let recipeNameTrim = truncateName(array[i].recipe.label, 25);
+        let recipeNameTrim = truncateName(array[i].recipe.label, 20);
         let imgURL = array[i].recipe.image;
 
         // Create a div set for the recipe found in the current index location of the passed array
