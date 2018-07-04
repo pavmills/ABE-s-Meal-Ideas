@@ -19,8 +19,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900" rel="stylesheet">
 
-    <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     <script src="assets/javascript/config.js"></script>
@@ -34,7 +36,6 @@
 
     <!-- CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
-
 
 </head>
 <body>
@@ -76,26 +77,25 @@
     <!-- SIDE BAR -->
     <div class="col-12 col-md-3">
         <section class="side-bar">
-            <h3>Ingredient.</h3>
+            <h3>Ingredient</h3>
             <ul>
-                <li>Chicken<i class="fas fa-utensils"></i></li>
-                <li>Beef <i class="fas fa-utensils"></i></li>
-                <li>Noodles <i class="fas fa-utensils"></i></li>
+                <li class="staticSearch" onclick="staticSearch('chicken')">Chicken<i class="fas fa-utensils"></i></li>
+                <li class="staticSearch" onclick="staticSearch('beef')">Beef <i class="fas fa-utensils"></i></li>
+                <li class="staticSearch" onclick="staticSearch('pasta')">Pasta<i class="fas fa-utensils"></i></li>
             </ul>
-            <h3>Category.</h3>
+            <h3>Category</h3>
             <ul>
-                <li>Favorites <i class="far fa-star"></i></li>
-                <li>Healthy <i class="far fa-heart"></i></li>
-                <li>Quick &amp; Easy <i class="far fa-clock"></i></li>
-                <li>Vegetarian <i class="fa fa-leaf"></i></li>
+                <li class="staticSearch" onclick="staticSearch('healthy')">Healthy <i class="far fa-heart"></i></li>
+                <li class="staticSearch" onclick="staticSearch('quick and easy')">Quick &amp; Easy <i class="far fa-clock"></i></li>
+                <li class="staticSearch" onclick="staticSearch('vegetarian')">Vegetarian <i class="fa fa-leaf"></i></li>
             </ul>
         </section>
     </div>
 
     <!-- SEARCH -->
     <form class="search-form">
-        <button class="btn search-button" type="submit"><i class="fas fa-utensils"></i></button>
-        <input class="form-control mr-sm-1 search-input" type="search" placeholder="What are you cooking?" aria-label="Search">
+        <button id="search" class="btn search-button" type="submit"><i class="fas fa-utensils"></i></button>
+        <input id="keyword" class="form-control mr-sm-1 search-input" type="text" placeholder="Find a recipe" aria-label="Search">
     </form>
 
     <!-- RECEPIES -->
