@@ -111,8 +111,8 @@
 
 
 .vex.vex-theme-wireframe-full {
-  padding-top: 160px;
-  padding-bottom: 160px; }
+  padding-top: 20px;
+  padding-bottom: 20px; }
 .vex.vex-theme-wireframe-full .vex-overlay {
   background: rgba(255, 255, 255, 0.4); }
 .vex.vex-theme-wireframe-full .vex-content {
@@ -133,7 +133,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  cursor: pointer; }
+  cursor: pointer;
+}
 .vex.vex-theme-wireframe-full .vex-close:before {
   position: absolute;
   content: "\00D7";

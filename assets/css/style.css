@@ -24,6 +24,16 @@ h1.headline {
     border-bottom: 2px solid black;
 }
 
+.navBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navBtn:hover {
+    color: #2db34a;
+}
+
 
 /* SEARCH */
 .search-form-side {
@@ -209,6 +219,7 @@ h6.category-title {
      border-radius: 50px;
      margin: 10px;
      border: none;
+     cursor: pointer;
  }
 
 .recipe-item button:hover {
@@ -217,6 +228,7 @@ h6.category-title {
 
 button.faved {
     color: #d5c50b;
+    cursor: default;
 }
 
 .recipe-name {
@@ -241,10 +253,21 @@ button.faved {
     font-size: 15px;
 }
 
-.navBtn {
-    background: none;
-    border: none;
+.staticSearch {
+    font-weight: bold;
     cursor: pointer;
+}
+
+.staticSearch:hover {
+    color: #2db34a;
+}
+
+p#no-results {
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #761c19;
+    text-align: center;
 }
  
  @media screen and (max-width:767px) {

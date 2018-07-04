@@ -9,7 +9,7 @@ initApp = function() {
             // User is signed out.
             $( ".navbar-nav" ).append(`
                 <li class="nav-item">
-                    <button id="signin" class="nav-link" onclick="signIn()">Sign In</button>
+                    <a id="signin" class="nav-link" href="login.html">Sign In</a>
                 </li>
             `);
 
