@@ -3,7 +3,7 @@ window.addEventListener('load', function() {
 
     // FirebaseUI config.
     let uiConfig = {
-        signInSuccessUrl: 'favorites.html',
+        signInSuccessUrl: 'index.html',
         signInOptions: [
 
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
