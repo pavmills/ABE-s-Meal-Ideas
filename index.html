@@ -42,8 +42,8 @@
 
 <!-- NAV -->
 <div class="nav-container">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="index.html">
             <img src="assets/images/meal-planner-logo.png" width="200px" class="d-inline-block align-top" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,9 +52,6 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
-                </li>
                 <li class="nav-item">
                     <button alt="Go to your favorites." class="nav-link navBtn" onclick="loadFavorites()">Favorites</button>
                 </li>
@@ -80,12 +77,14 @@
             <h3>Ingredient</h3>
             <ul>
                 <li class="staticSearch" onclick="staticSearch('chicken')">Chicken<i class="fas fa-utensils"></i></li>
-                <li class="staticSearch" onclick="staticSearch('beef')">Beef <i class="fas fa-utensils"></i></li>
+                <li class="staticSearch" onclick="staticSearch('cookies')">Cookies<i class="fas fa-utensils"></i></li>
                 <li class="staticSearch" onclick="staticSearch('pasta')">Pasta<i class="fas fa-utensils"></i></li>
+                <li class="staticSearch" onclick="staticSearch('salad')">Salad<i class="fas fa-utensils"></i></li>
             </ul>
             <h3>Category</h3>
             <ul>
-                <li class="staticSearch" onclick="staticSearch('healthy')">Healthy <i class="far fa-heart"></i></li>
+                <li class="staticSearch" onclick="staticSearch('gluten free')">Gluten-Free<i class="far fa-arrow-alt-circle-right"></i></li>
+                <li class="staticSearch" onclick="staticSearch('healthy')">Healthy<i class="far fa-heart"></i></li>
                 <li class="staticSearch" onclick="staticSearch('quick and easy')">Quick &amp; Easy <i class="far fa-clock"></i></li>
                 <li class="staticSearch" onclick="staticSearch('vegetarian')">Vegetarian <i class="fa fa-leaf"></i></li>
             </ul>
@@ -93,9 +92,9 @@
     </div>
 
     <!-- SEARCH -->
-    <form class="search-form">
+    <form class="search-form d-flex justify-content-center">
+        <input id="keyword" class="form-control mr-sm-1 search-input" type="text" placeholder="What are you cooking?" aria-label="Search">
         <button id="search" class="btn search-button" type="submit"><i class="fas fa-utensils"></i></button>
-        <input id="keyword" class="form-control mr-sm-1 search-input" type="text" placeholder="Find a recipe" aria-label="Search">
     </form>
 
     <!-- RECEPIES -->
@@ -110,6 +109,14 @@
 
 </div>
 <!-- END PAGE CONTENT -->
+
+    <!-- FOOTER
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div> -->
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="assets/javascript/app.js"></script>

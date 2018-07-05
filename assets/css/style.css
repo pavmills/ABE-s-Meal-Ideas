@@ -1,5 +1,5 @@
 
-body {
+body, h2 {
     width: 100%;
     margin: 0 auto;
     font-family: 'Work Sans', sans-serif;
@@ -10,6 +10,9 @@ h1.headline {
     color: white;
     font-family: 'Fredoka One', cursive;
     margin-top: 80px;
+}
+h2 {
+    font-weight: bold;
 }
 .container {
     width: 100%;
@@ -28,7 +31,7 @@ h1.headline {
     display: table;
     position: fixed;
     z-index: 700;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     background: white;
 }
 
@@ -42,17 +45,18 @@ h1.headline {
     right: 0;
     margin: 8px 40px 0 0;
     z-index: 999;
+    padding-top: 10px;
 }
 .search-button {
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid black;
     float: right;
     color: black;
 }
 .search-input {
     width: 70%;
     float: right;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 /* HEADLINE */
@@ -99,34 +103,12 @@ h1.headline {
     padding-top: 100px;
 }
 
-/* HOMEPAGE */
-.circle-image {
-    background: url('../images/table.jpg');
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 100px;
-    margin: 0 auto;
-    margin-top: 30px;
-}
-h6.category-title {
-    position: inherit;
-    text-align: center;
-    margin-top: 15px;
-}
+/* POP UP */
 
 .popup-container {
     width: 100%;
     max-width: 600px;
     display: none;
-}
-#popup {
-
-}
-#popup img {
-    width: 50px;
 }
 
 /* SIDE BAR */
@@ -158,6 +140,7 @@ h6.category-title {
  .side-bar ul li i {
      float: right;
      color: black;
+     margin-top: 5px;
  }
  .side-bar h3 {
      border-top: 5px solid black;
@@ -175,6 +158,14 @@ h6.category-title {
      letter-spacing: 3px;
      font-weight: bold;
  }
+ .staticSearch {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.staticSearch:hover {
+    color: #2db34a;
+}
 
  /* RECIPIE */
 
@@ -189,18 +180,7 @@ h6.category-title {
     padding: 0;
     width: 32%;
  }
- .recipe-item:nth-child(1) {
-    margin: 0px 5px 5px 5px;
- }
- .recipe-item:nth-child(2) {
-    margin: 0px 5px 5px 5px;
- }
- .recipe-item:nth-child(3) {
-    margin: 0px 5px 5px 5px;
- }
-/* .recipe-item:nth-child(4) {
-    margin: 0px 5px 5px 5px;
-} */
+
  .recipe-image {
      background-repeat: no-repeat;
      background-position: center;
@@ -221,11 +201,9 @@ h6.category-title {
      margin: 10px;
      border: none;
  }
-
 .recipe-item button:hover {
     color: #d5c50b;
 }
-
 button.faved {
     color: #d5c50b;
 }
@@ -237,11 +215,9 @@ button.faved {
     text-align: left;
     margin-bottom: 10px;
 }
-
 .recipe-name:hover {
     color: #2db34a;
 }
-
 .recipe-rating {
     padding: 5px 0 0 10px;
     font-size: 15px;
@@ -250,12 +226,56 @@ button.faved {
     padding: 5px 0 10px 10px;
     font-size: 15px;
 }
-
 .navBtn {
     background: none;
     border: none;
     cursor: pointer;
 }
+p#no-results {
+    width: 80%;
+    padding-top: 350px;
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+/* FAVORITES */
+.fav-error {
+    height: 350px;
+
+}
+.fav-error p {
+    line-height: 1.1em;
+    width: 60%;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.fav-error a {
+    line-height: 1.1em;
+    width: 60%;
+    margin-top: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: green;
+    font-size: 20px;
+    text-align: center;
+}
+
  
 @media screen and (max-width:1031px) {
     .recipe-item {
@@ -276,28 +296,24 @@ button.faved {
     }
 
     /* SEARCH */
-    .search-container {
-        width: 95%;
-        margin-bottom: 20px;
-    }
     .search-form {
         width: 100%;
-        float: none;
         position: relative;
-        margin: 0 auto;
         z-index: 500;
-        
+        margin: 0 auto;
+        padding-bottom: 20px;
     }
     .search-button {
         background-color: white;
-        border: 2px solid black;
+        border: 1px solid black;
         display: inline-block;
         color: black;
     }
     .search-input {
         float: right;
-        border: 2px solid black;
+        border: 1px solid black;
         display: inline-block;
+        margin-right: 10px;
     }
  }
 
