@@ -4,14 +4,11 @@ body, h2 {
     margin: 0 auto;
     font-family: 'Work Sans', sans-serif;
 }
-h1.headline {
-    font-size: 60px;
-    font-weight: normal;
-    color: white;
-    font-family: 'Fredoka One', cursive;
-    margin-top: 80px;
-}
+
 h2 {
+    font-weight: bold;
+}
+h5 {
     font-weight: bold;
 }
 .container {
@@ -38,7 +35,7 @@ h2 {
 
 /* SEARCH */
 .search-form {
-    width: 40%;
+    width: 30%;
     float: right;
     position: fixed;
     top: 0;
@@ -276,6 +273,17 @@ p#no-results {
     text-align: center;
 }
 
+/* FOOTER */
+
+.footer {
+    background: green;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+}
+.copyright {
+    font-size: 12px;
+}
  
 @media screen and (max-width:1031px) {
     .recipe-item {

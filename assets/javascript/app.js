@@ -133,55 +133,37 @@ function displayPopup(index) {
                     <div class="col-12 col-md-6">
                         <div class="row">
                             <div class="col-12 col-md-8">
-                                <img src="${currentRecipe.image}" style="float: left; width: 100%; padding: 0px; border: solid #000 1px; margin-bottom: 10px;">
+                                <img src="${currentRecipe.image}" style="float: left; width: 100%; padding: 0px; border: solid #000 1px; margin-bottom: 20px;">
                                 <h2 style="margin-bottom:10px">${currentRecipe.label}</h2>
-                                <div id="instructions">
+                                <div id="instructions" style="margin-bottom: 20px;">
                                     <a href="${currentRecipe.url}" target="_blank">Recipe Instructions</a>
                                 </div>
-                                <ul>
-                                    ${healthLables}
-                                </ul>
-
                             </div>      
                         </div>    
                     </div>
-                
+
                     <div class="col-12 col-md-6">
-
                         <div class="row">
-                            <div class="col-12">
-                                <table class="table">
-                                    <tr>
-                                        <th>Ingredients</th>
-                                    </tr>
-                                    <tbody>
-                                        ${ingredients}
-                                    </tbody>
-                                </table>
+                        <table class="table">
+                                <th><h5>Nutritional Facts</h5></th>
+                            </table>
+                            <div class="col-6">
+                                <p>Servings: ${servings}</p>
                             </div>
+                        <div class="col-6">
+                            <p>Calories: ${cal}</p>
                         </div>
-                        
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <p>Servings: ${servings}</p>
-                    </div>
-                    <div class="col-6">
-                        <p>Calories: ${cal}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <table class="table">
-                        <tr>
-                            <th>Nutrient</th>
-                            <th>Amount / Serving</th>
-                        </tr>
-                        <tr>
+                    <div class="row">
+                        <table class="table">
+                            <tr>
+                                <th>Nutrient</th>
+                                <th>Amount / Serving</th>
+                            </tr>
+                            <tr>
                                 <td>Total Fat</td>
                                 <td>${Math.floor((currentRecipe.digest[0].total / servings))} g</td>
-                        </tr>
+                            </tr>
                             <tr>
                                 <td>Cholesterol</td>
                                 <td>${Math.floor((currentRecipe.digest[3].total / servings))} mg</td>
@@ -198,10 +180,34 @@ function displayPopup(index) {
                                 <td>Protein</td>
                                 <td>${Math.floor((currentRecipe.digest[2].total / servings))} g</td>
                             </tr>
-                    </table>
+                        </table>
+                    </div>
                 </div>
                 
-                
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                            <table class="table">
+                                <tr>
+                                    <th><h5>Ingredients</h5></th>
+                                </tr>
+                                    <tbody>${ingredients}</tbody>
+                            </table>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="row"
+                        <div class="col-12">
+                            <table class="table">
+                                <th><h5>Allergy Information</h5></th>
+                            </table>
+                            <ul>
+                                ${healthLables}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     `;
