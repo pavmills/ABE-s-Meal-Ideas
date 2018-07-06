@@ -36,12 +36,13 @@
 
     <!-- CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/fixedsticky.css" rel="stylesheet">
 
 </head>
 <body>
 
 <!-- NAV -->
-<div class="nav-container">
+<div id="nav-container">
     <nav class="navbar navbar-expand-md navbar-light">
         <a class="navbar-brand" href="index.html">
             <img src="assets/images/meal-planner-logo.png" width="200px" class="d-inline-block align-top" alt="">
@@ -52,12 +53,28 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item mobile">
+                    <p class="staticSearch">Recipe Quick Search</p>
+                </li>
+                <li class="nav-item mobile">
+                    <a class="nav-link navBtn staticSearch" onclick="staticSearch('gluten free')">Gluten-Free<i class="far fa-arrow-alt-circle-right"></i></a>
+                </li>
+                <li class="nav-item mobile">
+                    <a class="nav-link navBtn staticSearch" onclick="staticSearch('healthy')">Healthy<i class="far fa-heart"></i></a>
+                </li>
+                <li class="nav-item mobile">
+                    <a class="nav-link navBtn staticSearch" onclick="staticSearch('quick and easy')">Quick &amp; Easy<i class="far fa-clock"></i></a>
+                </li>
+                <li class="nav-item mobile">
+                    <a class="nav-link navBtn staticSearch" onclick="staticSearch('vegetarian')">Vegetarian<i class="fa fa-leaf"></i></a>
+                </li>
+                <li class="nav-item mobile-padding">
                     <button alt="Go to your favorites." class="nav-link navBtn" onclick="loadFavorites()">Favorites</button>
                 </li>
                 <li class="nav-item">
-                    <a alt="Checkout your local grocers." class="nav-link navBtn" href="map.html">Local Grocers</a>
+                    <a alt="Checkout your local grocers." class="nav-link navBtn" onclick="loadMap()">Local Grocers</a>
                 </li>
+                
             </ul>
         </div>
     </nav>
@@ -73,7 +90,7 @@
 
     <!-- SIDE BAR -->
         <div class="col-12 col-md-3">
-            <section class="side-bar">
+            <section id="sidebar top-a" class="top fixedsticky">
                 <h3>Ingredient</h3>
                 <ul>
                     <li class="staticSearch" onclick="staticSearch('chicken')">Chicken<i class="fas fa-utensils"></i></li>
@@ -99,28 +116,47 @@
 
     <!-- RECEPIES -->
         <div class="col-12 col-md-9">
+             <!-- MAP -->
+             <div id="map"></div>
+
             <div class="row">
                 <div id="recipe"></div>
-
-                <!-- FOOTER -->
-                <div class="jumbotron jumbotron-fluid footer">
-                    <div class="container d-flex justify-content-center">
-                        <!-- <!-- <h1 class="display-4">Fluid jumbotron</h1> -->
-                        <p class="copyright">&copy; 2018 Meal Planner, Inc.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
-
-    <!-- MAP -->
-    <div id="map"></div>
 
 </div>
 <!-- END PAGE CONTENT -->
 
+<footer role="contentinfo">
+     <div class="jumbotron jumbotron-fluid footer">
+        <div class="container d-flex justify-content-center">
+            <p class="copyright">&copy; 2018 Meal Planner, Inc.</p><br>
+        </div>
+    </div>
+
+    <!-- <div class="container-fluid footer ">
+        <div class="row ">
+            <div class="col-12 col-md-4">
+                    <img style="width: 200px;" src="assets/images/meal-planner-logo-white.png">
+            </div>
+            <div class="col-12 col-md-4">
+                One of three columns
+            </div>
+            <div class="col-12 col-md-4">
+                One of three columns
+            </div>
+        </div>
+    </div> -->
+</footer>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="assets/javascript/app.js"></script>
+<script src="assets/javascript/fixedsticky.js"></script>
+
+<script>
+	FixedSticky.tests.sticky = false;
+	$( '.top, .bottom' ).fixedsticky();
+</script>
 
 </body>
 </html>

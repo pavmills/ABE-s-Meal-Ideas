@@ -300,3 +300,8 @@ function startListener() {
 
 // Initial recipe load
 queryRecipes();
+
+function loadMap() {
+    $("#recipe").empty();
+    $("#map").html('<div class="map-container"><object style="" data="map.html"/></div>');
+}
