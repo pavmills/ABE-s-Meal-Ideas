@@ -23,7 +23,7 @@ function truncateName(str, length, ending) {
 
 // This function is called and passed an array to be used to populate the page with recipes
 function displayResuts(array) {
-
+    $( "#map" ).empty();
     $( "#recipe" ).empty(); // Empty all exsisting recipe div sets from the page.
 
     // Loop through the passed arry to create a div set for each recipe object in the array.
