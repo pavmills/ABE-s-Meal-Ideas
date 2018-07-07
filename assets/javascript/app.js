@@ -23,7 +23,7 @@ function truncateName(str, length, ending) {
 
 // This function is called and passed an array to be used to populate the page with recipes
 function displayResuts(array) {
-    $( "#map" ).empty();
+    $( "#map" ).empty(); // (if) Empty existing map div from the page 
     $( "#recipe" ).empty(); // Empty all exsisting recipe div sets from the page.
 
     // Loop through the passed arry to create a div set for each recipe object in the array.
@@ -96,7 +96,7 @@ $( "#search" ).click(function(event) {
 
 });
 
-// This functions is called any time one of the side bar menu items is click. It passes in the word to be added to the queryURL.
+// This function is called any time one of the side bar menu items is clicked. It passes in the word to be added to the queryURL.
 function staticSearch(word) {
 
     // Set the global querryURL to include the search word.
@@ -224,7 +224,7 @@ function displayPopup(index) {
 // Function to process adding favorites when favorite icon clicked.
 function addFav(id) {
 
-    // Firebase will not accept opject keys with a period(.) in the name. So, if the key "SUGAR.added" is found, remove it.
+    // Firebase will not accept object keys with a period(.) in the name. So, if the key "SUGAR.added" is found, remove it.
     if ("SUGAR.added" in resultsArray[id].recipe.totalNutrients) {
         delete resultsArray[id].recipe.totalNutrients["SUGAR.added"];
     }
@@ -303,5 +303,5 @@ queryRecipes();
 
 function loadMap() {
     $("#recipe").empty();
-    $("#map").html('<div class="map-container"><object style="" data="map.html"/></div>');
+    $("#map").html('<object style="" data="map.html"/>');
 }

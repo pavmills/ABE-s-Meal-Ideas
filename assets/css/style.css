@@ -297,14 +297,41 @@ object {
 
 /* FOOTER */
 
-.footer {
-    background: green;
+#footer-container {
     width: 100%;
-    color: white;
+    display: table;
+    background: black;
     margin-top: 30px;
+}
+.footer {
+    width: 97%;
+    color: white;
+    margin: 0 auto;
+    background: black;
+    text-align: center;
+    margin-top: 30px;
+}
+footer h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+footer h4 {
+    font-weight: 800;
+    font-size: 20px;
+}
+.footer-logo {
+    margin-bottom: 40px;
+    padding-top: 30px;
+}
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 .copyright {
     font-size: 12px;
+    margin-bottom: 40px;
 }
  
 @media screen and (max-width:1031px) {

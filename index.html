@@ -57,7 +57,7 @@
                     <p class="staticSearch">Recipe Quick Search</p>
                 </li>
                 <li class="nav-item mobile">
-                    <a class="nav-link navBtn staticSearch" onclick="staticSearch('gluten free')">Gluten-Free<i class="far fa-arrow-alt-circle-right"></i></a>
+                    <a class="nav-link navBtn staticSearch" onclick="staticSearch('gluten free')">Gluten-Free<i class="far fa-check-circle"></i></a>
                 </li>
                 <li class="nav-item mobile">
                     <a class="nav-link navBtn staticSearch" onclick="staticSearch('healthy')">Healthy<i class="far fa-heart"></i></a>
@@ -91,7 +91,7 @@
     <!-- SIDE BAR -->
         <div class="col-12 col-md-3">
             <section id="sidebar top-a" class="top fixedsticky">
-                <h3>Ingredient</h3>
+                <h3>Recommendations</h3>
                 <ul>
                     <li class="staticSearch" onclick="staticSearch('chicken')">Chicken<i class="fas fa-utensils"></i></li>
                     <li class="staticSearch" onclick="staticSearch('cookies')">Cookies<i class="fas fa-utensils"></i></li>
@@ -100,7 +100,7 @@
                 </ul>
                 <h3>Category</h3>
                 <ul>
-                    <li class="staticSearch" onclick="staticSearch('gluten free')">Gluten-Free<i class="far fa-arrow-alt-circle-right"></i></li>
+                    <li class="staticSearch" onclick="staticSearch('gluten free')">Gluten-Free<i class="far fa-check-circle"></i></li>
                     <li class="staticSearch" onclick="staticSearch('healthy')">Healthy<i class="far fa-heart"></i></li>
                     <li class="staticSearch" onclick="staticSearch('quick and easy')">Quick &amp; Easy <i class="far fa-clock"></i></li>
                     <li class="staticSearch" onclick="staticSearch('vegetarian')">Vegetarian <i class="fa fa-leaf"></i></li>
@@ -128,11 +128,22 @@
 <!-- END PAGE CONTENT -->
 
 <!-- FOOTER -->
-<footer role="contentinfo">
-     <div class="jumbotron jumbotron-fluid footer">
-        <div class="container d-flex justify-content-center">
-            <p class="copyright">&copy; 2018 Meal Planner, Inc.</p><br>
+<footer id="footer-container">
+
+    <div class="container footer">
+        <div class="row footer-logo">
+            <div class="col-12 d-flex justify-content-center">
+                <img style="width: 45px; height: 45px;" src="assets/images/meal-planner-icon.png">
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <h3>meals made easy.</h3>
+            </div>
         </div>
+         <div class="row">
+             <div class="col-12 d-flex justify-content-center">
+                 <p class="copyright">&copy; 2018 Meal Planner, Inc.</p>
+            </div>
+         </div>
     </div>
 </footer>
 
